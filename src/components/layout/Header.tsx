@@ -14,6 +14,12 @@ export function Header() {
 
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
           <Link
+            href="/calc/online-seller"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            ขายออนไลน์
+          </Link>
+          <Link
             href="#features"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
@@ -25,18 +31,15 @@ export function Header() {
           >
             ราคา
           </Link>
-          <Link
-            href="#faq"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            คำถามที่พบบ่อย
-          </Link>
         </nav>
 
         <div className="flex items-center gap-2">
-          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-            Coming Soon
-          </span>
+          <Link
+            href="/calc/online-seller"
+            className="rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            คำนวณเลย
+          </Link>
         </div>
       </div>
     </header>

@@ -1,5 +1,7 @@
-import { CheckCircle2, Sparkles, TrendingUp, Zap } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2, Sparkles, TrendingUp, Zap } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { EmailCapture } from "@/components/landing/EmailCapture";
 
@@ -32,12 +34,25 @@ export default function Home() {
             รวมทุก calculator ที่จำเป็นไว้ที่เดียว — ใช้งานฟรี ไม่ต้องสมัคร
           </p>
 
-          {/* Email capture */}
-          <div className="mt-8 w-full max-w-md">
-            <EmailCapture />
-            <p className="mt-3 text-xs text-muted-foreground">
-              เป็นคนแรกที่รู้เมื่อเปิดใช้งาน — ไม่สแปม สัญญา
+          {/* Primary CTA — calculator is live */}
+          <div className="mt-8 flex flex-col items-center gap-3">
+            <Link href="/calc/online-seller">
+              <Button size="xl" className="text-base">
+                คำนวณกำไรเลย — ฟรี
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+            <p className="text-xs text-muted-foreground">
+              ไม่ต้องสมัคร · ใช้งานได้ทันที
             </p>
+          </div>
+
+          {/* Email capture (secondary) */}
+          <div className="mt-8 w-full max-w-md">
+            <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+              หรือรับแจ้งเตือนเมื่อ feature ใหม่ออก
+            </p>
+            <EmailCapture />
           </div>
         </div>
 
