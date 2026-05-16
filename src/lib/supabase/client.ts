@@ -1,8 +1,13 @@
 import { createBrowserClient } from "@supabase/ssr";
 
+import type { Database } from "@/types/database";
+
 /**
  * Browser Supabase client — use inside Client Components, hooks,
  * and any code that runs in the browser.
+ *
+ * Returns a strongly-typed client (Database). Methods like `.from('profiles')`
+ * will autocomplete columns and return correctly-typed Rows.
  *
  * Reads env vars:
  *   NEXT_PUBLIC_SUPABASE_URL
@@ -18,5 +23,5 @@ export function createClient() {
     );
   }
 
-  return createBrowserClient(url, anonKey);
+  return createBrowserClient<Database>(url, anonKey);
 }
